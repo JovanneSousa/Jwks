@@ -1,9 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.5.11723.231 stable
+VisualStudioVersion = 18.5.11723.231
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jovanne.Jwks", "Jovanne.Jwks.csproj", "{83683A15-FE6E-C8BD-494B-AD78DC046080}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{A393ED07-C0B4-4AB2-BD8C-50A6B56415CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{E4AD0733-9932-46DA-AA60-BD828D1733DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "All", "All", "{355B3F50-483C-41CB-8256-C32098D90DA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jovanne.Jwks.Client", "Src\Jovanne.Jwks.Client\Jovanne.Jwks.Client.csproj", "{344718D4-2A26-4C16-9052-444DAB00F477}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jovanne.Jwks", "Src\Jovanne.Jwks\Jovanne.Jwks.csproj", "{E1ABF316-7781-4ED8-971B-2DE921C5168E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jovanne.Jwks.Server", "Src\Jovanne.Jwks.Server\Jovanne.Jwks.Server.csproj", "{BC0D938D-2AE7-5735-0B8E-759593A8197A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +21,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{83683A15-FE6E-C8BD-494B-AD78DC046080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{83683A15-FE6E-C8BD-494B-AD78DC046080}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{83683A15-FE6E-C8BD-494B-AD78DC046080}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{83683A15-FE6E-C8BD-494B-AD78DC046080}.Release|Any CPU.Build.0 = Release|Any CPU
+		{344718D4-2A26-4C16-9052-444DAB00F477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{344718D4-2A26-4C16-9052-444DAB00F477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{344718D4-2A26-4C16-9052-444DAB00F477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{344718D4-2A26-4C16-9052-444DAB00F477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1ABF316-7781-4ED8-971B-2DE921C5168E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1ABF316-7781-4ED8-971B-2DE921C5168E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1ABF316-7781-4ED8-971B-2DE921C5168E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1ABF316-7781-4ED8-971B-2DE921C5168E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC0D938D-2AE7-5735-0B8E-759593A8197A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC0D938D-2AE7-5735-0B8E-759593A8197A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC0D938D-2AE7-5735-0B8E-759593A8197A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC0D938D-2AE7-5735-0B8E-759593A8197A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{344718D4-2A26-4C16-9052-444DAB00F477} = {A393ED07-C0B4-4AB2-BD8C-50A6B56415CB}
+		{E1ABF316-7781-4ED8-971B-2DE921C5168E} = {355B3F50-483C-41CB-8256-C32098D90DA9}
+		{BC0D938D-2AE7-5735-0B8E-759593A8197A} = {E4AD0733-9932-46DA-AA60-BD828D1733DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BED2A38-EC34-44D2-A000-DB71827FDDEA}

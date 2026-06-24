@@ -1,4 +1,4 @@
-﻿namespace Jovanne.Jwks.Core
+﻿namespace Jovanne.Jwks.Client.Models
 {
     internal class JwtSettings
     {

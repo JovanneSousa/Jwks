@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 
-namespace Jovanne.Jwks.Extensions
+namespace Jovanne.Jwks.Client.Extensions
 {
     public class AspNetUser : IUser
     {

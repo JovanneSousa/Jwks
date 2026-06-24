@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace Jovanne.Jkws.Extensions
+namespace Jovanne.Jwks.Client.Extensions
 {
     public class CustomAuthorization
     {

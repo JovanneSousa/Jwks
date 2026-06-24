@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 
-namespace Jovanne.Jkws.Extensions
+namespace Jovanne.Jwks.Client.Extensions
 {
     public interface IUser
     {

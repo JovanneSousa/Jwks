@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace Jovanne.Jkws.Extensions
+namespace Jovanne.Jwks.Client.Extensions
 {
     public class ClaimsAuthorizeAttribute : TypeFilterAttribute
     {

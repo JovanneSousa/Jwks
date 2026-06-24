@@ -1,29 +1,31 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Builder;
+﻿using Jovanne.Jwks.Client.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using NetDevPack.Security.JwtExtensions;
 
-namespace Jovanne.Jwks.Core
+namespace Jovanne.Jwks.Client
 {
-    public static class IdentityConfig
+    public static class IdentityClientConfig
     {
-        public static WebApplicationBuilder AddIdentityClientConfig(this WebApplicationBuilder builder)
+        public static IServiceCollection AddJovanneJwksClient(
+            this IServiceCollection services,
+            IConfiguration configuration,
+            bool isDevelopment)
         {
-            var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
+            var jwtSettings = configuration.GetSection("JwtSettings").Get<JwtSettings>();
             if (string.IsNullOrEmpty(jwtSettings?.AutenticacaoJwksUrl))
                 throw new InvalidOperationException("Url JWT não configurado.");
             var issuer = jwtSettings.Issuer ?? jwtSettings.AutenticacaoJwksUrl;
 
-            builder.Services.AddAuthentication(o =>
+            services.AddAuthentication(o =>
             {
                 o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 o.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(o =>
             {
-                o.RequireHttpsMetadata = !builder.Environment.IsDevelopment();
+                o.RequireHttpsMetadata = !isDevelopment;
                 o.SaveToken = true;
                 o.SetJwksOptions(new JwkOptions($"{jwtSettings.AutenticacaoJwksUrl}/jwks", issuer));
 
@@ -36,7 +38,7 @@ namespace Jovanne.Jwks.Core
                         context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                         context.Response.ContentType = "application/json";
 
-                        await context.Response.WriteAsJsonAsync(new 
+                        await context.Response.WriteAsJsonAsync(new
                         {
                             Success = false,
                             Errors = new[]
@@ -51,7 +53,7 @@ namespace Jovanne.Jwks.Core
                         context.Response.StatusCode = StatusCodes.Status403Forbidden;
                         context.Response.ContentType = "application/json";
 
-                        await context.Response.WriteAsJsonAsync(new 
+                        await context.Response.WriteAsJsonAsync(new
                         {
                             Success = false,
                             Errors = new[]
@@ -64,7 +66,7 @@ namespace Jovanne.Jwks.Core
             });
 
 
-            return builder;
+            return services;
         }
     }
 }
