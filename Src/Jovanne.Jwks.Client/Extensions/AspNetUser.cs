@@ -1,4 +1,3 @@
-﻿using Jovanne.Jkws.Extensions;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 

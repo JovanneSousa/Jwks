@@ -4,12 +4,35 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>Jovanne.Jwks.Server</PackageId>
+    <Title>Jovanne JWKS Server</Title>
+    <Description>Configura emissao e persistencia de chaves JWKS com ASP.NET Core Identity e Entity Framework Core.</Description>
+    <Authors>Jovanne Sousa</Authors>
+    <Company>Jovanne Sousa</Company>
+    <Version>1.0.0</Version>
+    <PackageProjectUrl>https://github.com/JovanneSousa/Jwks/tree/main/Src/Jovanne.Jwks.Server</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/JovanneSousa/Jwks/tree/main/Src/Jovanne.Jwks.Server</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>jwks;jwt;identity;entityframeworkcore;aspnetcore;security</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.0" />
-		<PackageReference Include="NetDevPack.Security.Jwt.AspNetCore" Version="9.0.4" />
-		<PackageReference Include="NetDevPack.Security.Jwt.Store.EntityFrameworkCore" Version="9.1.0" />
-	</ItemGroup>
-	
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="NetDevPack.Security.Jwt.AspNetCore" Version="9.0.4" />
+    <PackageReference Include="NetDevPack.Security.Jwt.Store.EntityFrameworkCore" Version="9.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 </Project>

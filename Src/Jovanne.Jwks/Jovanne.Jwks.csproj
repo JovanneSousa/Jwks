@@ -4,11 +4,31 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>Jovanne.Jwks</PackageId>
+    <Title>Jovanne JWKS</Title>
+    <Description>Pacote agregador para configurar client e server JWKS em uma mesma aplicacao ASP.NET Core.</Description>
+    <Authors>Jovanne Sousa</Authors>
+    <Company>Jovanne Sousa</Company>
+    <Version>1.0.0</Version>
+    <PackageProjectUrl>https://github.com/JovanneSousa/Jwks/tree/main/Src/Jovanne.Jwks</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/JovanneSousa/Jwks/tree/main/Src/Jovanne.Jwks</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>jwks;jwt;authentication;identity;aspnetcore;security</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Jovanne.Jwks.Client\Jovanne.Jwks.Client.csproj" />
     <ProjectReference Include="..\Jovanne.Jwks.Server\Jovanne.Jwks.Server.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
